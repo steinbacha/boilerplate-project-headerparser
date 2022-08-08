@@ -30,12 +30,9 @@ app.get('/api/hello', function (req, res) {
 app.use('/api/whoami', function (req, res, next) {
   res.json({ 
     ipaddress: req.ip,
-    language: req.headers["accept-langauage"],
-    software: browser
-                .name
-                .version
-                })
-  console.log(req.headers["accept-language"])
+    language: req.headers['accept-language'],
+    software: req.headers['user-agent']
+    })
   next();
 })
 
